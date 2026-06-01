@@ -162,10 +162,16 @@ terraform-aws-vpc/
 
 ---
 
-## License
+## Remote State
 
-MIT
-=======
+State is stored remotely in S3 with DynamoDB locking:
 
+| Resource | Name |
+|---|---|
+| S3 Bucket | `devops-vpc-tfstate-<account-id>` |
+| DynamoDB Table | `terraform-state-lock` |
+| Encryption | AES-256 |
+| Versioning | Enabled |
 
->>>>>>> 9c5c4073f45b96726c47d632a7c182de72fb2a7f
+Configure backend before `terraform init` if deploying to a new environment.
+
