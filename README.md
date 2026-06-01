@@ -1,6 +1,11 @@
 # AWS VPC Infrastructure with Terraform
 
+<<<<<<< HEAD
 A Terraform project that provisions a production-ready AWS network layout — VPC, public/private subnets across two AZs, NAT Gateways, a bastion host, tiered security groups, and an encrypted S3 bucket. All resources are tagged consistently and follow AWS security best practices.
+=======
+A Terraform project that provisions a production-ready AWS network layout — VPC, public/private subnets across two AZs, NAT Gateways, a bastion host, tiered security groups, and an encrypted S3 bucket. 
+All resources are tagged consistently and follow AWS security.
+>>>>>>> 9c5c4073f45b96726c47d632a7c182de72fb2a7f
 
 ---
 
@@ -43,8 +48,13 @@ Internet ──── IGW ─────►│  │ Public  AZ-1 │    │ Pub
 
 ## Prerequisites
 
+<<<<<<< HEAD
 - [Terraform](https://developer.hashicorp.com/terraform/install) >= 1.3.0
 - AWS CLI configured (`aws configure`) with permissions to manage VPC, EC2, S3, and IAM resources
+=======
+- [Terraform]
+- AWS CLI configured
+>>>>>>> 9c5c4073f45b96726c47d632a7c182de72fb2a7f
 - An existing EC2 key pair in the target region
 
 ---
@@ -147,6 +157,7 @@ terraform-aws-vpc/
 - Private subnets have **no direct internet access** — outbound goes through NAT only
 - The bastion security group only opens ports 80/443 as a demo; in production restrict SSH (port 22) to your IP
 - The S3 bucket has **public access fully blocked** and server-side encryption enabled (AES-256)
+<<<<<<< HEAD
 - Terraform state is stored locally by default — for team use, configure an [S3 remote backend](https://developer.hashicorp.com/terraform/language/settings/backends/s3) with DynamoDB locking
 
 ---
@@ -154,3 +165,7 @@ terraform-aws-vpc/
 ## License
 
 MIT
+=======
+
+
+>>>>>>> 9c5c4073f45b96726c47d632a7c182de72fb2a7f
